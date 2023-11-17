@@ -28,7 +28,7 @@ const NewRecipeIngredients = ({ onUpdateIngredients }) => {
 
   return (
     <div className="flex flex-col mt-8">
-      <h2 className="flex justify-center">Ingredients</h2>
+      <h2 className="flex justify-center mb-4 text-2xl">Ingredients</h2>
       <div className="flex flex-row justify-center">
         <label hidden>Name</label>
         <input type="text" ref={nameRef} className="p-1 border-2 rounded-md w-2/3" placeholder="Ingredient Name" />
@@ -52,7 +52,7 @@ const NewRecipeIngredients = ({ onUpdateIngredients }) => {
 
         <button
           onClick={addIngredient}
-          className="bg-blue-400 hover:bg-blue-600 transition-colors duration-300 rounded-full w-7 h-7 ml-4 text-white font-semibold text-lg"
+          className="text-slate-300 hover:text-blue-600 transition-colors duration-300 ml-4 font-semibold text-3xl pb-1"
         >
           +
         </button>

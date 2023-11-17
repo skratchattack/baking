@@ -1,6 +1,7 @@
 import React from "react";
 import Logo from "./Logo";
 import Link from "next/link";
+import Image from "next/image";
 
 const NavBar = () => {
   const links = [
@@ -9,10 +10,10 @@ const NavBar = () => {
   ];
 
   return (
-    <header className="bg-blue-500 p-4 shadow-md shadow-slate-400">
-      <div className="flex items-center ml-10">
+    <header className="bg-blue-500 p-2 shadow-md shadow-slate-400">
+      <div className="flex items-center">
         <Link href="/">
-          <Logo />
+          <Image src="/images/recipes/RecipeSolutions.png" alt="logo" width={70} height={70} className="drop-shadow-sm" />
         </Link>
         <nav className="flex items-center space-x-4">
           <ul className="flex space-x-4 ml-10">
