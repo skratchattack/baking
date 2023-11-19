@@ -9,7 +9,7 @@ const NewRecipeTitle = ({ onTitle, onSetTitle }) => {
   };
 
   return (
-    <div className="w-1/3 min-w-max mx-40 mt-10">
+    <div className="w-2/3 md:w-1/2 lg:w-1/3 lg:mt-24 lg:mb-12 mt-60">
       <label hidden htmlFor="title">
         Title
       </label>

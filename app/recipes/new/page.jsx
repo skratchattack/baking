@@ -8,9 +8,8 @@ import NewRecipeSteps from "@/components/recipes/new-recipe/NewRecipeSteps";
 import NewRecipeStepsDisplay from "@/components/recipes/new-recipe/NewRecipeStepsDisplay";
 import NewRecipeTitle from "@/components/recipes/new-recipe/NewRecipeTitle";
 import NewRecipeType from "@/components/recipes/new-recipe/NewRecipeType";
+import NewRecipeWeightOptions from "@/components/recipes/new-recipe/NewRecipeWeightOptions";
 import { useEffect, useState } from "react";
-
-
 
 const NewRecipePage = (props) => {
   const [title, setTitle] = useState("");
@@ -26,10 +25,11 @@ const NewRecipePage = (props) => {
   });
   const [recipeType, setRecipeType] = useState("");
   const [description, setDescription] = useState("");
+  const [weight, setWeight] = useState([]);
 
   useEffect(() => {
-    console.log(recipeType);
-  }, [recipeType]);
+    console.log(weight);
+  }, [weight]);
 
   const addIngredient = (newIngredient) => {
     setIngredients([...ingredients, newIngredient]);
@@ -40,23 +40,36 @@ const NewRecipePage = (props) => {
   };
 
   return (
-    <div>
-      <div className="flex flex-col lg:flex-row justify-center mt-6 text-center items-center ">
+    <div className="h-screen">
+      <div className="ml-4 mt-6 absolute">
         <NewRecipeImageUploadWidget onImage={image} onSetImage={setImage} />
-        <NewRecipeTitle onTitle={title} onSetTitle={setTitle} />
-        <NewRecipeOvenInstructions onSetOvenInstructions={setOvenInstructions} onOvenInstructions={ovenInstructions} />
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-2">
-        <div>
+      <div className="flex justify-center">
+        <NewRecipeTitle onTitle={title} onSetTitle={setTitle} />
+      </div>
+      <div className="flex justify-evenly xl:flex-row flex-col min-h-[59%]">
+        <div className="flex flex-col xl:w-1/2">
           <NewRecipeIngredients onUpdateIngredients={addIngredient} />
           <NewRecipeIngredientDisplay onIngredients={ingredients} onSetIngredients={setIngredients} />
         </div>
-        <div>
+        <div className="flex flex-col xl:w-1/2">
           <NewRecipeSteps onUpdateSteps={addStep} />
           <NewRecipeStepsDisplay onSteps={steps} onSetSteps={setSteps} />
         </div>
-        <div className="flex flex-col lg:flex-row fixed bottom-0 pb-10 w-full">
-          <NewRecipeType onRecipeType={recipeType} onSetRecipeType={setRecipeType} />
+      </div>
+      <div className="flex flex-col 2xl:flex-row justify-evenly pb-10 w-full">
+        <div className="flex justify-evenly 2xl:w-1/2">
+          <div className="mx-5">
+            <NewRecipeType onRecipeType={recipeType} onSetRecipeType={setRecipeType} />
+          </div>
+          <div className="mx-5">
+            <NewRecipeWeightOptions onWeight={weight} onSetWeight={setWeight} />
+          </div>
+          <div className="mx-5">
+            <NewRecipeOvenInstructions onSetOvenInstructions={setOvenInstructions} onOvenInstructions={ovenInstructions} />
+          </div>
+        </div>
+        <div className="flex justify-center mx-5 2xl:w-1/2">
           <NewRecipeDescription onDescription={description} onSetDescription={setDescription} />
         </div>
       </div>

@@ -27,7 +27,7 @@ const NewRecipeIngredients = ({ onUpdateIngredients }) => {
   };
 
   return (
-    <div className="flex flex-col mt-8">
+    <div className="flex flex-col mt-8 ml-4">
       <h2 className="flex justify-center mb-4 text-2xl">Ingredients</h2>
       <div className="flex flex-row justify-center">
         <label hidden>Name</label>

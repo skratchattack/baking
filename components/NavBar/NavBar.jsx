@@ -10,7 +10,7 @@ const NavBar = () => {
   ];
 
   return (
-    <header className="bg-blue-500 p-2 shadow-md shadow-slate-400">
+    <header className="bg-blue-600 p-2 shadow-md shadow-slate-400">
       <div className="flex items-center">
         <Link href="/">
           <Image src="/images/recipes/RecipeSolutions.png" alt="logo" width={70} height={70} className="drop-shadow-sm" />

@@ -30,7 +30,7 @@ const NewRecipeOvenInstructions = ({ onSetOvenInstructions, onOvenInstructions }
 
 
   return (
-    <div className="mt-4 border-2 rounded-lg border-blue-400 py-6 p-3">
+    <div className="border-2 border-blue-400 rounded-lg pb-8 w-48 p-4 mt-10 h-44">
       <div className="flex justify-center">
         <label htmlFor="oven-temp">
           <Tooltip id="temperatureTooltip" />

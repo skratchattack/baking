@@ -44,7 +44,7 @@ const NewRecipeIngredientDisplay = ({ onIngredients, onSetIngredients }) => {
   };
 
   return (
-    <div className="mt-10 text-center">
+    <div className="mt-10 text-center overflow-y-auto">
       <DragDropContext onDragEnd={handleOnDragEnd}>
         <StrictModeDroppable droppableId="ingredients">
           {(provided) => (

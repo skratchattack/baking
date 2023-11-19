@@ -45,7 +45,7 @@ const NewRecipeStepsDisplay = ({ onSteps, onSetSteps }) => {
   };
 
   return (
-    <div className="mt-10 text-center">
+    <div className="mt-10 text-center overflow-y-auto">
       <DragDropContext onDragEnd={handleOnDragEnd}>
         <StrictModeDroppable droppableId="steps">
           {(provided) => (
@@ -57,15 +57,15 @@ const NewRecipeStepsDisplay = ({ onSteps, onSetSteps }) => {
                       ref={provided.innerRef}
                       {...provided.draggableProps}
                       {...provided.dragHandleProps}
-                      className={`flex flex-row justify-center ${snapshot.isDragging ? "drop-shadow-xl" : ""}`}
+                      className={`flex flex-row justify-end ${snapshot.isDragging ? "drop-shadow-xl" : ""}`}
                     >
                       <div
                         className={`bg-white transition-colors duration-300 hover:text-slate-500 font-semibold pr-4 text-2xl flex justify-center items-center ${
                           snapshot.isDragging ? "text-slate-500" : "text-slate-300"
                         }`}
                       >
-                        <MdDragIndicator />
                         <p>{index + 1}.</p>
+                        <MdDragIndicator />
                       </div>
                       <label hidden>Instruction Steps</label>
                       <textarea

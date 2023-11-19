@@ -21,7 +21,7 @@ const NewRecipeType = ({ onRecipeType, onSetRecipeType }) => {
   };
 
   return (
-    <div className="border-2 border-blue-400 rounded-lg pb-8 w-48 p-4 mt-10 ml-10">
+    <div className="border-2 border-blue-400 rounded-lg pb-8 w-48 p-4 mt-10 h-44">
       <h3 className="flex justify-center mb-3">Type:</h3>
       <div className="flex flex-col">
         {recipeTypePicks.map((type, index) => (
